@@ -2,9 +2,9 @@ package com.appthwack.sandwich.views.classes;
 
 import android.widget.ImageView;
 
-import com.appthwack.sandwich.identifiers.AElementByClass;
+import com.appthwack.sandwich.identifiers.AClass;
 
-@AElementByClass(ImageView.class)
+@AClass(ImageView.class)
 public class AImageView extends AView {
 
 }

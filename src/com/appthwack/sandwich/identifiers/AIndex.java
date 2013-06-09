@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package com.appthwack.sandwich.identifiers;
 
 import java.lang.annotation.ElementType;
@@ -5,9 +8,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
-@Target(ElementType.FIELD)
+/**
+ * @author pwojnaro
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AElementByIdName {
-	String value();
+@Target(ElementType.FIELD)
+public @interface AIndex {
+	int value();
 }

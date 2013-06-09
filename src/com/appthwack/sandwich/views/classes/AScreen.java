@@ -3,8 +3,8 @@ package com.appthwack.sandwich.views.classes;
 import java.lang.reflect.Field;
 
 import android.app.Activity;
-import android.util.Log;
 
+import com.appthwack.sandwich.SandwichSettings;
 import com.appthwack.sandwich.SoloFactory;
 import com.appthwack.sandwich.identifiers.AElementIdentifier;
 import com.appthwack.sandwich.views.interfaces.IAScreen;
@@ -13,9 +13,8 @@ public class AScreen implements IAScreen {
 
 	Class<? extends Activity> mActivityClass;
 	public AScreen(Class<? extends Activity> activityClass){
-		for (Field field : this.getClass().getDeclaredFields()){
-			field.setAccessible(true);
-			Log.d("sandwich", "Init: " + field.getName());
+		for (Field field : this.getClass().getFields()){
+			//field.setAccessible(true);
 			initializeAElementField(field);
 		}
 		mActivityClass = activityClass;
@@ -32,7 +31,7 @@ public class AScreen implements IAScreen {
 			
 			
 			try {
-				AView fieldValue = (AView)fieldType.newInstance();
+				AElementBase fieldValue = (AElementBase)fieldType.newInstance();
 				fieldValue.initialize(elementIdentifier,this);
 				field.set(this, fieldValue);
 			} catch (InstantiationException e) {
@@ -50,5 +49,11 @@ public class AScreen implements IAScreen {
 	public boolean waitFor(int timeout) {
 		// TODO Auto-generated method stub
 		return SoloFactory.getSolo().waitForActivity(mActivityClass, timeout);
+	}
+
+
+	@Override
+	public boolean waitFor() {
+		return waitFor(SandwichSettings.getWaitTime());
 	}
 }

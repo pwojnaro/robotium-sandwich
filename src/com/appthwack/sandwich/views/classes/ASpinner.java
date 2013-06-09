@@ -2,10 +2,10 @@ package com.appthwack.sandwich.views.classes;
 
 import android.widget.Spinner;
 
-import com.appthwack.sandwich.identifiers.AElementByClass;
+import com.appthwack.sandwich.identifiers.AClass;
 
 
-@AElementByClass(Spinner.class)
+@AClass(Spinner.class)
 public class ASpinner extends AAbsSpinner {
 
 }

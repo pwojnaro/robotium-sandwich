@@ -2,9 +2,10 @@ package com.appthwack.sandwich.views.classes;
 
 import android.widget.GridView;
 
-import com.appthwack.sandwich.identifiers.AElementByClass;
+import com.appthwack.sandwich.identifiers.AClass;
 
-@AElementByClass(GridView.class)
+
+@AClass(GridView.class)
 public class AGridView extends AAbsListView {
 
 	

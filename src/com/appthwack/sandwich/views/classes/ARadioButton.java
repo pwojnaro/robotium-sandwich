@@ -2,9 +2,9 @@ package com.appthwack.sandwich.views.classes;
 
 import android.widget.RadioButton;
 
-import com.appthwack.sandwich.identifiers.AElementByClass;
+import com.appthwack.sandwich.identifiers.AClass;
 
-@AElementByClass(RadioButton.class)
+@AClass(RadioButton.class)
 public class ARadioButton extends ACompoundButton {
 
 	
