@@ -37,7 +37,14 @@ public class AView extends AElementBase implements IAView {
 			return mIdentifier.getDescription();
 	}
 	
-	
+    private int getResouceIdByName(String resourceName){
+    	try{
+    		return SoloFactory.getInstrumentation().getTargetContext().getResources().getIdentifier(resourceName, "id", "com.soundcloud.android");
+    	} catch (Exception ex) {
+    		return -1;
+    	}
+    }
+    
 	public View getView(){
 		
 		if (mView != null)
@@ -47,10 +54,24 @@ public class AView extends AElementBase implements IAView {
 		Assert.assertNotNull("View class not defined", elementClass);
 		int index = mIdentifier.getIndex();
 		View view = null;
+		//Try getting by ID
 		if (mIdentifier.getId()>-1)
 			view =  SoloFactory.getSolo().getView(mIdentifier.getId(), index);
-		else
-			view = SoloFactory.getSolo().getView(elementClass, index);
+		//If ID not defined try by ID name
+		else if (mIdentifier.getIdName()!=null){
+			//Resolve ID name to ID
+			int id = getResouceIdByName(mIdentifier.getIdName());
+			//Try getting by ID if found
+			if (id!=-1)
+				view = SoloFactory.getSolo().getView(id,index);
+		}
+		//If still not found try searching by text
+		else if (mIdentifier.getText()!=null){
+			if (SoloFactory.getSolo().searchText(mIdentifier.getText()))
+				view = SoloFactory.getSolo().getText(mIdentifier.getText());
+		}
+		// Use just class and index otherwise
+		else view = SoloFactory.getSolo().getView(elementClass, index);
 		
 		Assert.assertNotNull("View not found", view);
 		Assert.assertTrue("View found but of a different type", elementClass.isAssignableFrom(view.getClass()));
@@ -174,6 +195,6 @@ public class AView extends AElementBase implements IAView {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-
 }
+
+

@@ -5,6 +5,7 @@ public class SandwichSettings {
 	static boolean mAutomaticAssertsEnabled = true;
 	static boolean mAutomaticWaitEnabled = true;
 	static boolean mAutomaticScrollEnabled = true;
+	static boolean mDebugLoggingEnabled = false;
 	
 	public static int getWaitTime(){
 		return mWaitTime;
@@ -36,6 +37,15 @@ public class SandwichSettings {
 	
 	public static void setAutomaticScrollEnabled(boolean enabled){
 		mAutomaticScrollEnabled = enabled;
+	}
+
+	
+	public static boolean getDebugLoggingEnabled(){
+		return mDebugLoggingEnabled;
+	}
+	
+	public static void setDebugLoggingEnabled(boolean enabled){
+		mDebugLoggingEnabled = enabled;
 	}
 
 }

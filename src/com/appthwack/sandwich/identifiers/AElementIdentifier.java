@@ -15,7 +15,7 @@ public class AElementIdentifier {
 	Class<? extends View> mElementClass;
 	int mId = -1;
 	String mText;
-	String mIdName;
+	String mIdName="";
 	String mName;
 	String mCssSelector;
 	int mIndex = 0;
@@ -131,7 +131,7 @@ public class AElementIdentifier {
 			identifiers.add(MessageFormat.format("Id:{0}", mId));
 
 		if(mIdName != null)
-			identifiers.add(MessageFormat.format("Id:{0}", mIdName));
+			identifiers.add(MessageFormat.format("IdName:{0}", mIdName));
 
 		if(mIndex != -1)
 			identifiers.add(MessageFormat.format("Index:{0}", mIndex));

@@ -1,9 +1,11 @@
 package com.appthwack.sandwich.views.classes;
 
 import java.lang.reflect.Field;
+import java.text.MessageFormat;
 
 import android.app.Activity;
 
+import com.appthwack.sandwich.SandwichAssert;
 import com.appthwack.sandwich.SandwichSettings;
 import com.appthwack.sandwich.SoloFactory;
 import com.appthwack.sandwich.identifiers.AElementIdentifier;
@@ -48,7 +50,9 @@ public class AScreen implements IAScreen {
 	@Override
 	public boolean waitFor(int timeout) {
 		// TODO Auto-generated method stub
-		return SoloFactory.getSolo().waitForActivity(mActivityClass, timeout);
+		boolean result = SoloFactory.getSolo().waitForActivity(mActivityClass, timeout);
+		SandwichAssert.assertTrue(MessageFormat.format("Timed out waiting for activity {0}, current activity is {1}",mActivityClass.getName(), SoloFactory.getSolo().getCurrentActivity().getClass().getName()) , result);
+		return result;
 	}
 
 
