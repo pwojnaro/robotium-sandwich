@@ -4,4 +4,5 @@ public interface IAEditText extends IAView {
 
 	void enterText(String text);
 	void enterTextAndSendEnter(String text);
+	void clearText();
 }

@@ -3,6 +3,7 @@ package com.appthwack.sandwich;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 
 public class SandwichBaseTest<T extends Activity> extends ActivityInstrumentationTestCase2<T> {
 
@@ -12,7 +13,9 @@ public class SandwichBaseTest<T extends Activity> extends ActivityInstrumentatio
 
 	protected void setUp() throws Exception {
 		super.setUp();
-		SoloFactory.createSolo(getInstrumentation(), getActivity());
+		Log.d("sandwich","setup");
+		SoloFactory.createSolo(getInstrumentation());
+		this.getActivity();
 		
 	}
 	

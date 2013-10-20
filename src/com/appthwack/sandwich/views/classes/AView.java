@@ -19,16 +19,16 @@ import com.jayway.android.robotium.solo.Condition;
 public class AView extends AElementBase implements IAView {
 
 	protected View mView;
+
+	
+	
+	void initialize(View view, AScreen screen, String name){
+		super.initialize(null, screen, name);
+		mView = view;
+	}
 	
 
-	void initialize(View view, AScreen screen){
-		mView = view;
-		mScreen = screen;
-	}
-	
-	public AView(){
-		
-	}
+
 	
 	protected String getDescription(){
 		if (mView != null)
@@ -39,14 +39,13 @@ public class AView extends AElementBase implements IAView {
 	
     private int getResouceIdByName(String resourceName){
     	try{
-    		return SoloFactory.getInstrumentation().getTargetContext().getResources().getIdentifier(resourceName, "id", "com.soundcloud.android");
+    		return SoloFactory.getInstrumentation().getTargetContext().getResources().getIdentifier(resourceName, "id", SoloFactory.getInstrumentation().getTargetContext().getPackageName());
     	} catch (Exception ex) {
     		return -1;
     	}
     }
     
-	public View getView(){
-		
+    View getView(boolean autoAssert){
 		if (mView != null)
 			return mView;
 		
@@ -73,19 +72,38 @@ public class AView extends AElementBase implements IAView {
 		// Use just class and index otherwise
 		else view = SoloFactory.getSolo().getView(elementClass, index);
 		
-		Assert.assertNotNull("View not found", view);
-		Assert.assertTrue("View found but of a different type", elementClass.isAssignableFrom(view.getClass()));
-				
+		if (autoAssert){
+			Assert.assertNotNull("View not found", view);
+			Assert.assertTrue("View found but of a different type", elementClass.isAssignableFrom(view.getClass()));
+		}		
 			
-		
 		return view;
+    }
+    
+	public View getView(){
+		if (SandwichSettings.getAutomaticWaitEnabled())
+			return waitForView(SandwichSettings.getWaitTime());
+		else
+			return getView(true);
 	}
+	
+	public View waitForView(int timeout) {
+		long startTime = SystemClock.uptimeMillis();
+		while (startTime + timeout > SystemClock.uptimeMillis()){
+			View view = getView(false);
+			if (view!=null)
+				return view;
+		}
+		return getView();
+	
+	}
+	
 	
 	protected View getAndWaitForView(){
 		View view = getView();
 		SandwichAssert.assertNotNull(MessageFormat.format("View {0} not found", getDescription()), view);
 		if (SandwichSettings.getAutomaticWaitEnabled()){
-			SandwichAssert.assertTrue(MessageFormat.format("View {0} not in the view hierarchy",getDescription()), waitFor()); 
+			//SandwichAssert.assertTrue(MessageFormat.format("View {0} not in the view hierarchy",getDescription()), waitFor()); 
 			SandwichAssert.assertTrue(MessageFormat.format("View {0} not visible",getDescription()), waitForVisible()); 
 		}
 		
@@ -111,6 +129,7 @@ public class AView extends AElementBase implements IAView {
 	@Override
 	public void click() {
 		View view = getAndWaitForView();
+		SandwichLog.d("Click on view");
 		SoloFactory.getSolo().clickOnView(view,true);
 			
 	}
@@ -119,14 +138,18 @@ public class AView extends AElementBase implements IAView {
 	@Override
 	public void clickLong() {
 		View view = getAndWaitForView();
+		SandwichLog.d("Long click on view");
 		SoloFactory.getSolo().clickLongOnView(view);
 		
 	}
+	
+	
 
 
 	@Override
 	public boolean waitFor(int timeout) {
 		long startTime = SystemClock.uptimeMillis();
+		//TODO: this looks funky, review
 		while (startTime + timeout > SystemClock.uptimeMillis()){
 			View view = getView();
 			if (view!=null)
@@ -164,6 +187,7 @@ public class AView extends AElementBase implements IAView {
 	@Override
 	public boolean waitForVisibility(int visibility, int timeout) {
 		View view = getView();
+		SandwichLog.d(MessageFormat.format("Waiting for view visibilty {0} for {1} ms",visibility,timeout));
 		if (SoloFactory.getSolo().waitForView(view,timeout,false))
 			return SoloFactory.getSolo().waitForCondition(new VisibilityCondition(view, visibility), timeout);
 		
@@ -189,6 +213,7 @@ public class AView extends AElementBase implements IAView {
 		}
 
 	}
+	
 
 	@Override
 	public boolean inCurrentDecorView() {

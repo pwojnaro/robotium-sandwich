@@ -1,6 +1,8 @@
 package com.appthwack.sandwich.views.classes;
 
 
+import java.text.MessageFormat;
+
 import android.view.View;
 import android.widget.AbsListView;
 
@@ -34,7 +36,7 @@ public class AAbsListView extends AAdapterView implements IAAbsListView {
 		if (listView.getCount()>line){
 			View child= listView.getChildAt(line);
 			AView childAView = new AView();
-			childAView.initialize(child, mScreen);
+			childAView.initialize(child, mScreen,MessageFormat.format("{0}.{1}{2}", mName,"Item",line));
 			return childAView;
 			
 		}

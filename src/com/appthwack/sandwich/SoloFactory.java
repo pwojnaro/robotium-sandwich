@@ -1,6 +1,5 @@
 package com.appthwack.sandwich;
 
-import android.app.Activity;
 import android.app.Instrumentation;
 
 import com.jayway.android.robotium.solo.Solo;
@@ -17,8 +16,9 @@ public class SoloFactory {
 		return mInstrumentation;
 	}
 	
-	public static Solo createSolo(Instrumentation instrumentation, Activity activity){
-		mSolo = new Solo(instrumentation,activity);
+	
+	public static Solo createSolo(Instrumentation instrumentation){
+		mSolo = new Solo(instrumentation);
 		mInstrumentation = instrumentation;
 		return mSolo;
 	}
