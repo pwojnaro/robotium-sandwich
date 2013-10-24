@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sampleapp"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/robotium-sandwich"/>
+	<classpathentry exported="true" kind="lib" path="/robotium-sandwich/bin/robotium-sandwich.jar"/>
+	<classpathentry exported="true" kind="lib" path="/robotium-sandwich/libs/robotium-solo-4.3.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
