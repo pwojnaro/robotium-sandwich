@@ -43,7 +43,7 @@ public class AAbsListView extends AAdapterView implements IAAbsListView {
 			
 		return null;
 	}
-
+	
 
 	@Override
 	public void clickInList(int line) {
