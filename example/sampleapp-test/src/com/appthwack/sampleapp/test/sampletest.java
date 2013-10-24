@@ -28,7 +28,6 @@ public class sampletest extends SandwichBaseTest<HomeActivity> {
 		stuffScreen.do_more_stuff.click();
 		
 		MoreStuffScreen moreStuffScreen = new MoreStuffScreen();
-		moreStuffScreen.list_full_of_stuff.clickInList(0);
 		moreStuffScreen.list_full_of_stuff.clickInList(1);
 		
 		
