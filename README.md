@@ -11,19 +11,19 @@ Building large and scalable test suites using Robotium can be a challenging task
 library, one can quickly end up with tests that are impossible to maintain, difficult to expand and full of a boiler-plate 
 code. 
 Robotium-Sandwich is a library that sits on top of Android instrumentation and Robotium to address this problem.
-Robotium-Sandwich makes it super easy to create page object like definitions for different screens of your app and to write
+Robotium-Sandwich makes it super easy to create [page object](http://martinfowler.com/bliki/PageObject.html) like definitions for different screens of your app and to write
 abstract tests free of boiler-plate.
 
 
 Concept
 -------
 
-Robotium-Sandwich test suite is broken into two parts: screen definition classes and tests themselves. Every screen class
+The Robotium-Sandwich test suite is broken into two parts: screen definition classes and tests themselves. Every screen class
 maps to different screens of your app and contains definitions of widgets within that screen. This approach (similar to
 a page object pattern) allows you to write tests that treat screens as objects and their widgets as object 
 properties. What's unique about Robotium-Sandwich is that you don't have to find and retrieve a specific widget every time
 your test code needs to interact with it. 
-A quick example will make it much clearer, consider a following screen:
+A quick example will make it much clearer, consider the following screen:
 
 <TBD>
 
@@ -70,7 +70,7 @@ With the screen definition in place you can quickly write an abstract script tha
 ```
 
 Robotium-Sandwich does the rest of the work behind the scenes. It will find and retrieve a widget associated with a given
-widget field (i.e. stuffScreen.do_more_stuff will map to a view of Button type with "Do more stuff" text) and it will
+widget field (e.g. `stuffScreen.do_more_stuff` will map to a view of `Button` type with "Do more stuff" text) and it will
 perform a requested action on that widget (using a familar Robotium implementation in most cases).
 
 
