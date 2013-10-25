@@ -78,7 +78,9 @@ Screen classes
 --------------
 
 Robotium-Sandwich screen classes are very easy to define. Simply derive your class from AScreen, pass a target activity
-class to a default constructor and define any number of widgets as public fields. Every widget field has to be of a type that derives from AView and is typically annotated with one more @A* identifiers. If no identifier is provided, Sandwich will associate a field with a first occurence of widget of a given type (@(AIndex(0) is a default identifier).
+class to a default constructor and define any number of widgets as public fields. Every widget field has to be of a type that derives from AView and is typically annotated with one more @A* identifiers. If no identifier is provided, Sandwich will associate a field with the first occurence of widget of a given type (@AIndex(0) is a default identifier).
+
+Screen classes can also contain methods that implement business logic of an app. This is a highly recommended design pattern that will result in even more abstract and maintanable tests.
 
 
 Widgets and identifiers
