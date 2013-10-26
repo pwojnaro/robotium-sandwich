@@ -22,6 +22,9 @@ public class sampletest extends SandwichBaseTest<HomeActivity> {
 		homeScreen.do_stuff_button.click();
 
 		StuffScreen stuffScreen = new StuffScreen();
+		stuffScreen.waitFor();
+		SoloFactory.getSolo().takeScreenshot();
+		
 		stuffScreen.my_spinner.selectItemAt(1);
 		stuffScreen.sample_edittext.enterText("Some stuff");
 		stuffScreen.radio1.click();
