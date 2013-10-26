@@ -10,7 +10,7 @@ Introduction
 Building large and scalable test suites using Robotium can be a challenging task. Without a carefully designed abstraction 
 library, one can quickly end up with tests that are impossible to maintain, difficult to expand and full of a boiler-plate 
 code. 
-Robotium-Sandwich is a library that sits on top of Android instrumentation and Robotium to address this problem.
+Robotium-Sandwich is a library built on top of Android instrumentation and Robotium to address this problem.
 Robotium-Sandwich makes it super easy to create [page object](http://martinfowler.com/bliki/PageObject.html) like definitions for different screens of your app and to write
 abstract tests free of boiler-plate.
 
@@ -23,7 +23,7 @@ maps to different screens of your app and contains definitions of widgets within
 a page object pattern) allows you to write tests that treat screens as objects and their widgets as object 
 properties. What's unique about Robotium-Sandwich is that you don't have to find and retrieve a specific widget every time
 your test code needs to interact with it. 
-A quick example will make it much clearer, consider the following screen:
+A quick example will make it much clearer, consider the following activity that contains a spinner, text edit, two radios and a button in its layout:
 
 ![Sample screen](docs/stuffScreen.jpg)
 
@@ -117,7 +117,7 @@ Logging and settings
 --------------------
 
 By default, Robotium-Sandwich will log its internal operations to a device/emulator logcat under 'Sandwich' tag. You can append your own 'Sandwich' log messages by calling class methods on SandwichLog helper class.
-Selected settings of the framework are exposed via SandwichSettings library:
+Selected settings of the framework are exposed via class methods on SandwichSettings class:
 * **setDebugLoggingEnabled** - disables/enables internal debug logs. True by default.
 * **setAutomaticAssertsEnabled** - disables/enables automatic asserts for certain conditions including view not found, view found but of a wrong type, activity not curent etc. Trye by default.
 * **setAutomaticWaitEnabled** - disables/enables automatic wait for views and activities. When set to false, Robotium-Sandwich will not assert if a desired view or activity is present. True by default.
