@@ -25,7 +25,7 @@ properties. What's unique about Robotium-Sandwich is that you don't have to find
 your test code needs to interact with it. 
 A quick example will make it much clearer, consider the following screen:
 
-<TBD>
+![Sample screen](docs/stuffScreen.jpg)
 
 A complete Sandwich definition for this screen is as simple as the following skeleton class:
 
