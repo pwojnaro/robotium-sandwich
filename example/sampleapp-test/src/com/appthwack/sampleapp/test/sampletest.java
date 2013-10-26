@@ -23,6 +23,7 @@ public class sampletest extends SandwichBaseTest<HomeActivity> {
 
 		StuffScreen stuffScreen = new StuffScreen();
 		stuffScreen.my_spinner.selectItemAt(1);
+		stuffScreen.sample_edittext.enterText("Some stuff");
 		stuffScreen.radio1.click();
 		stuffScreen.radio2.click();
 		stuffScreen.do_more_stuff.click();

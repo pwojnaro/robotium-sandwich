@@ -5,6 +5,7 @@ import com.appthwack.sampleapp.StuffActivity;
 import com.appthwack.sandwich.identifiers.AId;
 import com.appthwack.sandwich.identifiers.AIndex;
 import com.appthwack.sandwich.identifiers.AText;
+import com.appthwack.sandwich.views.classes.AEditText;
 import com.appthwack.sandwich.views.classes.ARadioButton;
 import com.appthwack.sandwich.views.classes.AScreen;
 import com.appthwack.sandwich.views.classes.ASpinner;
@@ -22,6 +23,9 @@ public class StuffScreen extends AScreen {
 	
 	@AIndex(1)
 	public ARadioButton radio2;
+	
+	@AId(com.appthwack.sampleapp.R.id.sample_edit)
+	public AEditText sample_edittext;
 	
 	@AText("Do more stuff")
 	public AView do_more_stuff;

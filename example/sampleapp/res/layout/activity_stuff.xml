@@ -23,6 +23,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp" />
 
+        <EditText
+            android:id="@+id/sample_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
+
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
