@@ -7,11 +7,18 @@ import android.widget.TextView;
 import com.appthwack.sandwich.identifiers.AClass;
 import com.appthwack.sandwich.views.interfaces.IATextView;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ATextView.
+ */
 @AClass(TextView.class)
 public class ATextView extends AView implements IATextView {
 
 
 	
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IATextView#getText()
+	 */
 	@Override
 	public String getText() {
 		// TODO Auto-generated method stub

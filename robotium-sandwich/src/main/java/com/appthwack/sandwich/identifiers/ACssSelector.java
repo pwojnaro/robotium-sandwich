@@ -8,12 +8,20 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author pwojnaro
+ * The Interface ACssSelector.
  *
+ * @author pwojnaro
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface ACssSelector {
+	
+	/**
+	 * Value.
+	 *
+	 * @return the string
+	 */
 	String value();
 }

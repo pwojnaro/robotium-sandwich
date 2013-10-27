@@ -14,12 +14,24 @@ import com.appthwack.sandwich.identifiers.AElementIdentifier;
 import com.appthwack.sandwich.views.interfaces.IAScreen;
 import com.jayway.android.robotium.solo.Condition;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AScreen.
+ */
 public class AScreen implements IAScreen {
 
 	
+	/** The Sandwich log. */
 	protected ISandwichLogger SandwichLog;
 	
+	/** The m activity class. */
 	Class<? extends Activity> mActivityClass;
+	
+	/**
+	 * Instantiates a new a screen.
+	 *
+	 * @param activityClass the activity class
+	 */
 	public AScreen(Class<? extends Activity> activityClass){
 		SandwichLog = new SandwichLogger(this.getClass().getSimpleName());
 		for (Field field : this.getClass().getFields()){
@@ -29,6 +41,11 @@ public class AScreen implements IAScreen {
 	}
 	
 	
+	/**
+	 * Initialize a element field.
+	 *
+	 * @param field the field
+	 */
 	private void initializeAElementField(Field field){
 		AElementIdentifier elementIdentifier = AElementIdentifier.getAElementIdentifier(field);
 		if (elementIdentifier != null){
@@ -53,6 +70,9 @@ public class AScreen implements IAScreen {
 			
 	}
 
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IABase#waitFor(int)
+	 */
 	@Override
 	public boolean waitFor(int timeout) {
 
@@ -62,19 +82,35 @@ public class AScreen implements IAScreen {
 		return result;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IABase#waitFor()
+	 */
 	@Override
 	public boolean waitFor() {
 		return waitFor(SandwichSettings.getWaitTime());
 	}
 	
 	
+	/**
+	 * The Class ActivityCondition.
+	 */
 	private class ActivityCondition implements Condition {
+		
+		/** The m activity class. */
 		private Class<? extends Activity> mActivityClass;
 
+		/**
+		 * Instantiates a new activity condition.
+		 *
+		 * @param activityClass the activity class
+		 */
 		public ActivityCondition(Class<? extends Activity> activityClass) {
 			mActivityClass = activityClass;
 		}
 
+		/* (non-Javadoc)
+		 * @see com.jayway.android.robotium.solo.Condition#isSatisfied()
+		 */
 		@Override
 		public boolean isSatisfied() {
             

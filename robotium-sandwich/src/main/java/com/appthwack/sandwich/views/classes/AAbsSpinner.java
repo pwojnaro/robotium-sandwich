@@ -9,11 +9,18 @@ import android.widget.AbsSpinner;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AAbsSpinner.
+ */
 @AClass(AbsSpinner.class)
 public class AAbsSpinner extends AAdapterView implements
 		IAAbsSpinner {
 
 	//Implementation based on Robotium by RenasR
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IAAbsSpinner#selectItemAt(int)
+	 */
 	@Override
 	public void selectItemAt(int line) {
 		

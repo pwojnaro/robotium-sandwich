@@ -9,17 +9,45 @@ import com.appthwack.sandwich.views.classes.AElementBase;
 import android.view.View;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AElementIdentifier.
+ */
 public class AElementIdentifier {
 	
 	
+	/** The m element class. */
 	Class<? extends View> mElementClass;
+	
+	/** The m id. */
 	int mId = -1;
+	
+	/** The m text. */
 	String mText;
+	
+	/** The m id name. */
 	String mIdName="";
+	
+	/** The m name. */
 	String mName;
+	
+	/** The m css selector. */
 	String mCssSelector;
+	
+	/** The m index. */
 	int mIndex = 0;
 	
+	/**
+	 * Instantiates a new a element identifier.
+	 *
+	 * @param id the id
+	 * @param elementClass the element class
+	 * @param text the text
+	 * @param idName the id name
+	 * @param index the index
+	 * @param name the name
+	 * @param cssSelector the css selector
+	 */
 	private AElementIdentifier(int id, Class<? extends View> elementClass, String text, String idName, int index, String name,String cssSelector){
 		mId = id;
 		mElementClass = elementClass;
@@ -32,6 +60,12 @@ public class AElementIdentifier {
 	}
 	
 	
+	/**
+	 * Gets the a element identifier.
+	 *
+	 * @param elementField the element field
+	 * @return the a element identifier
+	 */
 	public static AElementIdentifier getAElementIdentifier(Field elementField){
 		
 		if (! AElementBase.class.isAssignableFrom(elementField.getType()))
@@ -99,29 +133,74 @@ public class AElementIdentifier {
 			return null;
 	}
 	
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public int getId(){
 		return mId;
 	}
+	
+	/**
+	 * Gets the id name.
+	 *
+	 * @return the id name
+	 */
 	public String getIdName(){
 		return mIdName;
 	}
+	
+	/**
+	 * Gets the text.
+	 *
+	 * @return the text
+	 */
 	public String getText(){
 		return mText;
 	}
+	
+	/**
+	 * Gets the element class.
+	 *
+	 * @return the element class
+	 */
 	public Class<? extends View> getElementClass(){
 		return mElementClass;
 	}
+	
+	/**
+	 * Gets the index.
+	 *
+	 * @return the index
+	 */
 	public int getIndex(){
 		return mIndex;
 	}
+	
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
 	public String getName(){
 		return mName;
 	}
 	
+	/**
+	 * Gets the css selector.
+	 *
+	 * @return the css selector
+	 */
 	public String getCssSelector(){
 		return mCssSelector;
 	}
 	
+	/**
+	 * Gets the description.
+	 *
+	 * @return the description
+	 */
 	public String getDescription(){
 		ArrayList<String> identifiers = new ArrayList<String>();
 		if(mElementClass != null)

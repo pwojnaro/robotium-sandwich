@@ -9,12 +9,19 @@ import com.appthwack.sandwich.identifiers.AClass;
 import com.appthwack.sandwich.views.interfaces.IAEditText;
 import com.jayway.android.robotium.solo.Solo;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AEditText.
+ */
 @AClass(EditText.class)
 public class AEditText extends AView implements IAEditText {
 
 	
 
 
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IAEditText#enterText(java.lang.String)
+	 */
 	@Override
 	public void enterText(String text) {
 		EditText view = (EditText)getAndWaitForView();
@@ -25,6 +32,9 @@ public class AEditText extends AView implements IAEditText {
 	
 	
 
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IAEditText#enterTextAndSendEnter(java.lang.String)
+	 */
 	@Override
 	public void enterTextAndSendEnter(String text) {
 		enterText(text);
@@ -35,6 +45,9 @@ public class AEditText extends AView implements IAEditText {
 
 
 
+	/* (non-Javadoc)
+	 * @see com.appthwack.sandwich.views.interfaces.IAEditText#clearText()
+	 */
 	@Override
 	public void clearText() {
 		EditText view = (EditText)getAndWaitForView();
