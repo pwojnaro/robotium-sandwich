@@ -90,7 +90,7 @@ Widgets and identifiers
 -----------------------
 
 The library comes with a number of predefined widget types that map to different Android view classes. A complete list can be found at <TBD>. The developer can also create his/her own Sandwich widgets by deriving from AView (or any of its
-derivatives) and implementing the relevant functionality using raw instrumentation or Robotium (more information in the [Miscellaneous](#Miscellaneous) section).
+derivatives) and implementing the relevant functionality using raw instrumentation or Robotium (more information [here](#Instrumentation and Robotium access)).
 Robotium-Sandwich also comes with a wide range of identifiers used to associate a widget field with an actual instance of an
 Android view:
 * **@AId** - uses an id to find a view. The least verbose and preferred if application source code is available. Can be combined
@@ -123,7 +123,7 @@ By default, Robotium-Sandwich will log its internal operations to a device/emula
 Selected settings of the framework are exposed via class methods on the `SandwichSettings` class:
 * **setDebugLoggingEnabled** - disables/enables internal debug logs. True by default.
 * **setAutomaticAssertsEnabled** - disables/enables automatic asserts for certain conditions including view not found, view found but of the wrong type, activity not current, etc. True by default.
-* **setAutomaticWaitEnabled** - disables/enables automatic wait for views and activities. When set to false, Robotium-Sandwich will not assert if a desired view or activity is present. True by default.
+* **setAutomaticWaitEnabled** - disables/enables automatic wait for views and activities. When set to true, Robotium-Sandwich will automatically wait for a desired view to be present and visible. True by default.
 * **setWaitTime** - sets a timeout (in milliseconds) used when waiting for a desired view or activity. The default is 5000ms.
 
 
