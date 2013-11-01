@@ -126,3 +126,20 @@ Selected settings of the framework are exposed via class methods on the `Sandwic
 * **setAutomaticWaitEnabled** - disables/enables automatic wait for views and activities. When set to false, Robotium-Sandwich will not assert if a desired view or activity is present. True by default.
 * **setWaitTime** - sets a timeout (in milliseconds) used when waiting for a desired view or activity. The default is 5000ms.
 
+
+License
+--------
+
+    Copyright 2013 AppThwack
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
