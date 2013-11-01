@@ -75,7 +75,7 @@ perform a requested action on that widget (using the familar Robotium implementa
 Download
 ------------
 
-Simply download [our latest jar](https://dl.dropboxusercontent.com/s/kiznsylowplb83b/robotium-sandwich.jar?dl=1&token_hash=AAELqMdqukhR0o2Jmj9beieaA5erzUE1-B7TzbnMYpqhiw) and add it to your test project (coming to the Maven Central soon too). Please remember about the latest [Robotium jar](http://code.google.com/p/robotium/downloads/detail?name=robotium-solo-4.3.jar&can=2&q=) if you want to use any of the Robotium functionality directly.
+Simply download [our latest jar](https://dl.dropboxusercontent.com/s/kiznsylowplb83b/robotium-sandwich.jar?dl=1&token_hash=AAELqMdqukhR0o2Jmj9beieaA5erzUE1-B7TzbnMYpqhiw) and add it to your test project (coming to the Maven Central soon too). Please remember about the latest [Robotium jar](http://robotium.googlecode.com/files/robotium-solo-4.3.jar) if you want to use any of the Robotium functionality directly.
 
 Screen classes
 --------------
