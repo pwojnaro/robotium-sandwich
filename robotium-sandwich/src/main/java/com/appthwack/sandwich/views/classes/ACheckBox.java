@@ -6,7 +6,7 @@ import com.appthwack.sandwich.identifiers.AClass;
 
 
 /**
- * The Class ACheckBox.
+ * The ACheckBox class. Maps to android.widget.CheckBox class.
  */
 @AClass(CheckBox.class)
 public class ACheckBox extends ACompoundButton {

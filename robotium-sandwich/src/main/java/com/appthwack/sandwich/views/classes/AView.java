@@ -17,7 +17,7 @@ import com.jayway.android.robotium.solo.Condition;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class AView.
+ * The AView class. Maps to android.view.View class.
  */
 @AClass(View.class)
 public class AView extends AElementBase implements IAView {
@@ -43,7 +43,7 @@ public class AView extends AElementBase implements IAView {
 
 	
 	/**
-	 * Gets the description.
+	 * Gets the description string for a Sandwich identifier associated with this element.
 	 *
 	 * @return the description
 	 */
@@ -110,7 +110,7 @@ public class AView extends AElementBase implements IAView {
     }
     
 	/**
-	 * Gets the view.
+	 * Finds and returns the view using a Sandwich identifier associated with this element.
 	 *
 	 * @return the view
 	 */
