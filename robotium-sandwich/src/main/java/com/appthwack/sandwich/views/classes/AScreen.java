@@ -12,7 +12,7 @@ import com.appthwack.sandwich.SandwichSettings;
 import com.appthwack.sandwich.SoloFactory;
 import com.appthwack.sandwich.identifiers.AElementIdentifier;
 import com.appthwack.sandwich.views.interfaces.IAScreen;
-import com.jayway.android.robotium.solo.Condition;
+import com.robotium.solo.Condition;
 
 // TODO: Auto-generated Javadoc
 /**

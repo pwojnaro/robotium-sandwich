@@ -7,7 +7,7 @@ import android.widget.EditText;
 import com.appthwack.sandwich.SoloFactory;
 import com.appthwack.sandwich.identifiers.AClass;
 import com.appthwack.sandwich.views.interfaces.IAEditText;
-import com.jayway.android.robotium.solo.Solo;
+import com.robotium.solo.Solo;
 
 // TODO: Auto-generated Javadoc
 /**

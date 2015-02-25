@@ -2,8 +2,8 @@ package com.appthwack.sandwich.views.classes;
 
 import com.appthwack.sandwich.SoloFactory;
 import com.appthwack.sandwich.views.interfaces.IAWebElement;
-import com.jayway.android.robotium.solo.By;
-import com.jayway.android.robotium.solo.WebElement;
+import com.robotium.solo.By;
+import com.robotium.solo.WebElement;
 
 // TODO: Auto-generated Javadoc
 /**
