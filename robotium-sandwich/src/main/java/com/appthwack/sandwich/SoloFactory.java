@@ -2,8 +2,7 @@ package com.appthwack.sandwich;
 
 import android.app.Instrumentation;
 
-import com.robotium.solo.Solo;
-import com.robotium.solo.Solo.Config;
+import com.jayway.android.robotium.solo.Solo;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -43,18 +42,7 @@ public class SoloFactory {
 	 * @return the solo
 	 */
 	public static Solo createSolo(Instrumentation instrumentation){
-		return createSolo(instrumentation, null);
-	}
-
-		/**
-	 * Creates a new Solo object.
-	 *
-	 * @param instrumentation the instrumentation
-	 * @param SoloConfig 
-	 * @return the solo
-	 */
-	public static Solo createSolo(Instrumentation instrumentation, Config config){
-		mSolo = new Solo(instrumentation, config);
+		mSolo = new Solo(instrumentation);
 		mInstrumentation = instrumentation;
 		return mSolo;
 	}
