@@ -1,14 +1,14 @@
 Robotium-Sandwich
 =================
 
-Create beautifully abstract automated UI tests for Android apps
+Create abstract and simple automated UI tests for Android apps
 
 
 Introduction
 ------------
 
 Building large and scalable test suites using Robotium can be a challenging task. Without a carefully designed abstraction 
-library, one can quickly end up with tests that are impossible to maintain, difficult to expand, and full of a boiler-plate 
+library, one can quickly end up with tests that are impossible to maintain, difficult to expand, and full of boiler-plate 
 code. 
 Robotium-Sandwich is a library built on top of Android instrumentation and Robotium to address this problem.
 Robotium-Sandwich makes it super easy to create [page object](http://martinfowler.com/bliki/PageObject.html) like definitions for different screens of your app and to write
@@ -23,7 +23,7 @@ maps to a different screen of your app and contains definitions of widgets withi
 the page object pattern) allows you to write tests that treat screens as objects and their widgets as object 
 properties. What's unique about Robotium-Sandwich is that you don't have to find and retrieve a specific widget every time
 your test code needs to interact with it. 
-A quick example will make it much clearer. Consider the following activity that contains a spinner, text edit, two radios and a button in its layout:
+A quick example will make it much clearer. Consider the following activity that contains a spinner, text edit, two radios, and a button in its layout:
 
 ![Sample screen](docs/stuffScreen.jpg)
 
@@ -54,7 +54,7 @@ public class StuffScreen extends AScreen {
 }
 ```
 
-With the screen definition in place you can quickly write an abstract script that might look like this:
+With the screen definition in place you can quickly write an abstract script that looks like this:
 
 ```java
 	public void testStuff() {
@@ -75,13 +75,13 @@ perform a requested action on that widget (using the familar Robotium implementa
 Download
 ------------
 
-Simply download [our latest jar](https://dl.dropboxusercontent.com/s/kiznsylowplb83b/robotium-sandwich.jar?dl=1&token_hash=AAELqMdqukhR0o2Jmj9beieaA5erzUE1-B7TzbnMYpqhiw) and add it to your test project (coming to the Maven Central soon too). Please remember about the latest [Robotium jar](http://robotium.googlecode.com/files/robotium-solo-4.3.jar) if you want to use any of the Robotium functionality directly.
+Simply download [our latest jar](https://dl.dropboxusercontent.com/s/kiznsylowplb83b/robotium-sandwich.jar?dl=1&token_hash=AAELqMdqukhR0o2Jmj9beieaA5erzUE1-B7TzbnMYpqhiw) and add it to your test project (coming to Maven Central soon to make it even easier). Please remember the latest [Robotium jar](https://robotium.googlecode.com/files/robotium-solo-4.3.1.jar) if you want to use any of the Robotium functionality directly.
 
 Screen classes
 --------------
 
 Robotium-Sandwich screen classes are very easy to define. Simply derive your class from `AScreen`, pass a target activity
-class to the default constructor, and define any number of widgets as public fields. Every widget field must be of a type that derives from AView and is typically annotated with an `@A*` identifier. If no identifier is provided, Sandwich will associate the field with the first occurence of widget of a given type (`@AIndex(0)` being the default identifier).
+class to the default constructor, and define any number of widgets as public fields. Every widget field must be of a type that derives from `AView` and is typically annotated with an `@A*` identifier. If no identifier is provided, Sandwich will associate the field with the first occurence of a widget of a given type (`@AIndex(0)` being the default identifier).
 
 Screen classes can also contain methods that implement the business logic of an app. This is a highly recommended design pattern that will result in even more abstract and maintanable tests.
 
@@ -89,15 +89,15 @@ Screen classes can also contain methods that implement the business logic of an 
 Widgets and identifiers
 -----------------------
 
-The library comes with a number of predefined widget types that map to different Android view classes. A complete list can be found at <TBD>. The developer can also create his/her own Sandwich widgets by deriving from AView (or any of its
+The library comes with a number of predefined widget types that map to different Android view classes. A complete list can be found at <TBD>. You can create your own Sandwich widgets by deriving from `AView` (or any of its
 derivatives) and implementing the relevant functionality using raw instrumentation or Robotium (more information [here](#Instrumentation and Robotium access)).
 Robotium-Sandwich also comes with a wide range of identifiers used to associate a widget field with an actual instance of an
 Android view:
-* **@AId** - uses an id to find a view. The least verbose and preferred if application source code is available. Can be combined
+* **@AId** - uses an ID to find a view. The least verbose and preferred if application source code is available. Can be combined
 with `@AClass` and/or `@AIndex`.
 * **@AIdName** - uses a view ID name string that resolves to an actual resource ID, useful when working without the application source code. Can be combined with `@AClass` and/or `@AIndex`.
 * **@AText** - find a view by text. Can be be combined with `@AClass`.
-* **@AClass** - narrows down a target view type. Can be used alone or in combinations with other identifiers. If `@AClass` is not present, Robotium-Sandwich will default to an Android view class associated with a field type.
+* **@AClass** - narrows down a target view type. Can be used alone or in combinations with other identifiers. If `@AClass` is not present, Sandwich will default to an Android view class associated with a field type.
 * **@AIndex** - narrows down a search if multiple matches are present. Can be used alone or in combination with `AId`, `AIdName` and/or `AClass`.
 
 
